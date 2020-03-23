@@ -1,0 +1,193 @@
+<!--LINHA NAV-->
+<div class="hr_resultado">
+    <hr>
+</div>
+<!--FIM LINHA NAV-->
+
+<!--PÁGINA-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 pagina">
+            <ul>
+                <li><a href="/">HOME</a></li><i class="fa fa-angle-right"></i>
+                <li><a href="/consulta-e-servicoes">CONSULTA E SERVIÇOS</a></li><i class="fa fa-angle-right"></i>
+                <li><a href="javascript:;">RESULTADO</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--FIM PÁGINA-->
+
+<!--SECTION RESULTADO DA BUSCA-->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-5 col-md-5 coluna_1_resultado">
+
+            <div class="btn_busca">
+                <form class="example">
+                    <input type="text" name="cnpj" value="<?php echo \Tropaframework\Helper\Format::formatCnpjCpf($doc); ?>">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+            <img src="/assets/application/img/predio.jpg">
+
+            <h1>Sobre</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean leo urna, finibus vel sapien ut, maximus blandit felis. In cursus condimentum orci, ut sollicitudin ligula suscipit et. Duis est tellus, scelerisque ut convallis nec, suscipit non urna. In sit amet lacus ac erat volutpat sollicitudin eu in justo. Lorem ipsum dolor sit amet, consectetur.
+            </p>
+
+            <hr>
+
+            <div class="number"><i class="fa fa-globe"></i> <?php echo \Tropaframework\Helper\Format::formatCnpjCpf($doc); ?></div>
+            <div class="empresa"><i class="fa fa-check-circle"></i><a href="#">Empresa ATIVA na Receita Federal</a></div>
+            <div class="phone"><i class="fa fa-phone"></i><a href="#">11 3768 6523</a></div>
+            <div class="email"><i class="fa fa-envelope"></i><a href="#">mafracontabilidade.stz@gmail.com</a></div>
+            <div class="endereco"><i class="fa fa-map-marker"></i><a href="#">Rua Frei Caneca, 1407 - Consolação, São Paulo - SP</a></div>
+        </div>
+        <div class="col-lg-7 col-md-7 coluna_2_resultado">
+            <div class="nome_empresa">
+                <a>Gerprodi Gerenciamento de Projeto Digital Eireli</a><i class="fa fa-building"></i>
+            </div>
+            <div id="myDIV">
+                <button class="tablink active_1" onclick="openPage('aba1', this, '#fff')"id="defaultOpen"><p>Mais informações</p></button>
+                <button class="tablink" onclick="openPage('aba2', this, '#fff')"><p>Receita Federal</p></button>
+                <button class="tablink" onclick="openPage('aba3', this, '#fff')"><p>Sintegra</p></button>
+                <button class="tablink" onclick="openPage('aba4', this, '#fff')"id="simples_nacional"><p>Simples Nacional</p></button>
+            </div>
+
+
+            <div id="aba1" class="col-lg-12 col-md-12 tabcontent">
+
+                <div class="info_aba1">
+                    <div class="info1_aba1">
+                        <h3>ATIVIDADE ECONÔMICA PRIMÁRIA</h3>
+                        <div class="col-lg-2 col-md-2 codigo">
+                            <p>CÓDIGO</p>
+                            <p>6201501</p>
+                        </div>
+                        <div class="col-lg-10 col-md-10 descricao">
+                            <p>DESCRIÇÃO</p>
+                            <p>Desenvolvimento de programas de computador sob encomenda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info2_aba1">
+                    <h3>ATIVIDADE ECONÔMICA SECUNDÁRIAS</h3>
+                    <div class="col-lg-2 col-md-2 codigo">
+                        <p>CÓDIGO</p>
+                        <p>6204000</p>
+                        <p>6209100</p>
+                        <p>6209100</p>
+                    </div>
+                    <div class="col-lg-10 col-md-10 descricao">
+                        <p>DESCRIÇÃO</p>
+                        <p>Consultoria em tecnologia da informação</p>
+                        <p>Suporte técnico, manutenção e outros serviços em TI</p>
+                        <p>Serviços de aplicação e serviços de hospedagem na internet</p>
+                    </div>
+                </div>
+
+                <div class="info3_aba1">
+                    <h3>CÓDIGO E DESCRIÇÃO DA NATUREZA JURÍDICA</h3>
+                    <div class="col-lg-2 col-md-2 codigo">
+                        <p>CÓDIGO</p>
+                        <p>203-5</p>
+                    </div>
+                    <div class="col-lg-10 col-md-10 descricao">
+                        <p>DESCRIÇÃO</p>
+                        <p>Empresa individual de Responsabilidade Limitada</p>
+                    </div>
+                </div>
+
+                <div class="info4_aba1">
+                    <h3>CAPITAL SOCIAL</h3>
+                    <div class="col-lg-12 col-md-12 codigo">
+                        <p>R$ 95.400,00 (nove milhões e quinhentos e quarenta mil reais)</p>
+                    </div>
+                </div>
+
+                <div class="info5_aba1">
+                    <h3>CÓDIGO E DESCRIÇÃO DA NATUREZA JURÍDICA</h3>
+                    <div class="col-lg-6 col-md-6 codigo">
+                        <p>NOME</p>
+                        <p>Paulo Fernandes Lopes de Almeida</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 descricao">
+                        <p>QUALIFICAÇÃO</p>
+                        <p>65 • Titular Pessoa Física residente ou domiciliado no Brasil</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="aba2" class="col-lg-12 col-md-12 tabcontent">
+                <h3>RECEITA FEDERAL</h3>
+                <hr>
+                <div class="col-lg-6 col-md-6">
+                    <p>CÓDIGO</p>
+                    <p>6201501</p>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <p>CÓDIGO</p>
+                    <p>6201501</p>
+                </div>
+            </div>
+
+            <div id="aba3" class="col-lg-12 col-md-12 tabcontent">
+                <h3>SINTEGRA</h3>
+                <hr>
+                <div class="col-lg-6 col-md-6">
+                    <p>CÓDIGO</p>
+                    <p>6201501</p>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <p>CÓDIGO</p>
+                    <p>6201501</p>
+                </div>
+            </div>
+
+            <div id="aba4" class="col-lg-12 col-md-12 tabcontent">
+                <h3>SIMPLES NACIONAL</h3>
+                <hr>
+                <div class="col-lg-6 col-md-6">
+                    <p>CÓDIGO</p>
+                    <p>6201501</p>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <p>CÓDIGO</p>
+                    <p>6201501</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+            <li><a id="salvar_doc" href="#">SALVAR CONSULTA</a></li>
+            <li><a id="enviar_sms" href="#">ENVIAR VIA SMS</a></li>
+            <li class="pesquisa_vinculo"><a id="pesquisa" href="#">PESQUISA VÍNCULOS</a></li>
+        </div>
+
+
+    </div>
+
+</div>
+<!--FIM SECTION RESULTADO DA BUSCA-->
+
+<script>
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+    document.getElementById("defaultOpen").click();
+</script>

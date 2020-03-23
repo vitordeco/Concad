@@ -1,0 +1,86 @@
+<form data-values='<?php echo json_encode($this->result); ?>' class="auto-values validate" method="post">
+
+    <div class="card mb-3">
+    	
+    	<div class="card-header">
+			<h5>Informações do banner</h5>
+		</div>
+
+		<div class="card-body">
+
+			<div class="row">
+
+                <div class="form-group col-sm-3">
+                    <label>Nome do banner</label>
+                    <input class="form-control" type="text" name="banner" />
+                </div>
+
+                <div class="form-group col-sm-3">
+                    <label>Link</label>
+                    <input class="form-control" type="text" name="link" />
+                </div>
+
+			</div>
+
+        </div>
+
+    </div>
+
+    <div class="card mb-3">
+
+        <div class="card-header">
+            <h5>Imagens do banner</h5>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="form-group col-sm-6">
+
+                    <label>Imagem Desktop</label>
+
+                    <div class="uploadGrp">
+                        <a href="javascript:;" class="image uploadClick" data-target="#file" style="background-image: url('<?php echo !empty($this->result['imagem']) ? $this->result['imagem'] : null; ?>'); width:631px;"></a>
+                        <input type="hidden" name="imagem" value="<?php echo !empty($this->result['imagem']) ? $this->result['imagem'] : null; ?>" />
+                    </div>
+
+                    <small class="text-muted">Dimensão: 1920x700px<br/>Tamanho: 1MB</small>
+
+                </div>
+
+                <div class="form-group col-sm-6">
+
+                    <label>Imagem Mobile</label>
+
+                    <div class="uploadGrp">
+                        <a href="javascript:;" class="image uploadClick" data-target="#file" style="background-image: url('<?php echo !empty($this->result['imagem_mobile']) ? $this->result['imagem_mobile'] : null; ?>'); width:230px;"></a>
+                        <input type="hidden" name="imagem_mobile" value="<?php echo !empty($this->result['imagem_mobile']) ? $this->result['imagem_mobile'] : null; ?>" />
+                    </div>
+
+                    <small class="text-muted">Dimensão: 600x600px<br/>Tamanho: 1MB</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+
+            <button class="btn btn-sm btn-primary" type="submit">
+                <i class="fa fa-dot-circle-o"></i> Salvar
+            </button>
+
+        </div>
+
+    </div>
+    
+	<input type="hidden" name="method" value="save" />
+	
+</form>
+
+<form method="post" style="display:none;" class="uploadSubmit">
+	<input type="file" name="file" onchange="$(this).parents('form').submit();" id="file" />
+	<input type="hidden" name="method" value="upload" />
+</form>

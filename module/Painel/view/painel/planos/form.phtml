@@ -1,0 +1,54 @@
+<form data-values='<?php echo json_encode($this->result); ?>' class="auto-values validate" method="post">
+
+    <div class="card mb-3">
+
+        <div class="card-header">
+            <h5>Informações gerais</h5>
+        </div>
+
+		<div class="card-body">
+
+			<div class="row">
+
+                <div class="form-group col-sm-3">
+                    <label>Plano</label>
+                    <input class="form-control" type="text" name="tipo" />
+                </div>
+
+                <div class="form-group col-sm-3">
+                    <label>Valor</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">R$</span>
+                        </div>
+                        <input class="form-control price" type="text" name="valor" />
+                    </div>
+                </div>
+
+			</div>
+
+            <div class="row">
+
+                <div class="form-group col-sm-6">
+                    <label>Descrição</label>
+                    <textarea class="form-control" name="descricao"></textarea>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="card-footer">
+        	
+            <button class="btn btn-sm btn-primary" type="submit">
+            	<i class="fa fa-dot-circle-o"></i> Salvar
+            </button>
+            
+        </div>
+        
+    </div>
+    
+	<input type="hidden" name="method" value="save" />
+	
+</form>

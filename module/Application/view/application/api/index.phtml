@@ -1,0 +1,323 @@
+<!--LINHA NAV-->
+<div class="hr_resultado">
+    <hr>
+</div>
+<!--FIM LINHA NAV-->
+
+<!--PÁGINA-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 pagina_consulta">
+            <ul>
+                <li><a href="#">HOME</a></li><i class="fa fa-angle-right"></i>
+                <li><a href="#">API</a></li><i class="fa fa-angle-right"></i>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--FIM PÁGINA-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="col-lg-3 col-md-3 bloco_api">
+                <div class="panel-group">
+                    <div class="panel-default_consulta-cnpj">
+                        <div class="panel-heading_api">
+                            <h4 class="panel-title_api">
+                                <p><i class="fa fa-search"></i><a href="">Consulta CNPJ</a></p>
+                            </h4>
+                        </div>
+                        <div class="panel-heading_api">
+                            <h4 class="panel-title_api">
+                                <p><i class="fa fa-code"></i><a data-toggle="collapse" href="#collapse_apis" href="">Nossas APIs</a></p>
+
+                            </h4>
+                        </div>
+                        <div id="collapse_apis" class="panel-collapse collapse api_collapse">
+                            <p><a href="">Meu Token</a></p>
+                            <p><a href="">Consulta Saldo</a></p>
+                            <p><a href="">Receita Federal CNPJ</a></p>
+                            <p><a href="">Receita Federal CPF</a></p>
+                            <p><a href="">CONCAD</a></p>
+                            <p><a href="">Simples Nacional</a></p>
+                            <p><a href="">Suframa</a></p>
+                        </div>
+                    </div>
+                    <div class="panel-heading_api">
+                        <h4 class="panel-title_api">
+                            <p><i class="fa fa-align-left"></i><a href="">Extrato de Consultas</a></p>
+                        </h4>
+                    </div>
+                    <div class="panel-heading_api">
+                        <h4 class="panel-title_api">
+                            <p><i class="fa fa-file"></i><a href="">Retorno em Excel</a></p>
+                        </h4>
+                    </div>
+                    <div class="panel-heading_api">
+                        <h4 class="panel-title_api">
+                            <p><i class="fa fa-credit-card"></i><a href="">Comprar Créditos</a></p>
+                        </h4>
+                    </div>
+                    <div class="panel-heading_api">
+                        <h4 class="panel-title_api">
+                            <p><i class="fa fa-info-circle"></i><a href="">Sobre CONCAD WS</a></p>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="col-lg-12 col-md-12 api_pesquisa">
+                    <h1>API: Documentação Consulta Saldo</h1>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input id="email" type="text" class="form-control" name="email" placeholder="Pesquisar">
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 api_doc">
+                    <h1>Documentação da API <span>Consulta Saldo<span></h1>
+                    <hr>
+                    <div class="recuperar_saldo">
+                        <h2>Recuperar o saldo do seu plano</h2>
+                        <p>Método é utilizado para saber a quantidade de créditos disponível.</p>
+                    </div>
+                    <div class="url_requisicao">
+                        <p>URL para requisição</p>
+                    </div>
+                    <div class="urltoken">
+                        <p>www.concad.com.br</p>
+                    </div>
+                    <div class="parametro">
+                        <p>Parâmetros</p>
+                        <hr>
+                        <div class="info_parametro">
+                            <p><span>Token:</span> OBRIGATÓRIO</p>
+                            <p><span>String:</span> Após seu cadastro seu token está localizado em: Nossas APIs > Meu Token.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 ex_resposta">
+                    <h1>Exemplo de <span>Resposta<span></h1>
+                    <hr>
+                    <p>Uma resposta típica é composta por um JSON</p>
+                    <div class="col-lg-12 col-md-12 campo_exemplo nopad">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="campo_resultado">
+                                <p>Token</p>
+                            </div>
+                            <hr>
+                            <div class="btn_testar">
+                                <button><i class="fa fa-arrow-circle-right"></i> Testar</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 campo_code">
+                            <p>
+                                {<br>
+                                "code": "0",<br>
+                                "status": "OK",<br>
+                                "message": "Pesquisa realizada com sucesso",
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 campo_retorno">
+                    <h1>Campos de retorno da API <span>Consulta Saldo<span></h1>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Campo</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Descrição</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Code</th>
+                            <td>String</td>
+                            <td>Código de retorno utilizado para informar o status de requisição</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Status</th>
+                            <td>String</td>
+                            <td>Indica a situação da requisição. Valores possíveis: OK, ERROR.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Message</th>
+                            <td>String</td>
+                            <td>Mensagem explicativa indicando o campo status</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Consultas Disponíveis</th>
+                            <td>String</td>
+                            <td>Quantidade de consultas disponíveis</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-lg-12 col-md-12 retorno_possiveis">
+                    <h1>Retornos Possíveis</h1>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Message</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">0</th>
+                            <td>OK</td>
+                            <td>Pesquisa realizada com sucesso.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>ERROR</td>
+                            <td>Token inválido</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-lg-12 col-md-12 ex_codigos">
+                    <h1>Exemplos de códigos</h1>
+
+                    <div id="myDIV">
+                        <button class="tablink_code active_1" onclick="openPage('code1', this, '#fff')"id="defaultOpen"><p>Jquery</p></button>
+                        <button class="tablink_code" onclick="openPage('code2', this, '#fff')"><p>PHP</p></button>
+                        <button class="tablink_code" onclick="openPage('code3', this, '#fff')"><p>Python</p></button>
+                        <button class="tablink_code" onclick="openPage('code4', this, '#fff')"id="simples_nacional"><p>C#</p></button>
+                    </div>
+
+                    <div id="code1" class="col-lg-12 col-md-12 tabcontent_code">
+                        <div class="info_code1">
+                            function openPage(pageName,elmnt,color) { <br>
+                            var i, tabcontent, tablinks;<br>
+                            tabcontent = document.getElementsByClassName("tabcontent");<br>
+                            for (i = 0; i < tabcontent.length; i++) {<br>
+                            tabcontent[i].style.display = "none";<br>
+                            }<br>
+                            tablinks = document.getElementsByClassName("tablink");<br>
+                            for (i = 0; i < tablinks.length; i++) {<br>
+                            tablinks[i].style.backgroundColor = "";<br>
+                            }<br>
+                            document.getElementById(pageName).style.display = "block";<br>
+                            elmnt.style.backgroundColor = color;<br>
+                            }<br>
+
+                            // Get the element with id="defaultOpen" and click on it<br>
+                            document.getElementById("defaultOpen").click();<br>
+                        </div>
+                    </div>
+
+                    <div id="code2" class="col-lg-12 col-md-12 tabcontent_code">
+                        <div class="info_code2">
+                            function openPage(pageName,elmnt,color) { <br>
+                            var i, tabcontent, tablinks;<br>
+                            tabcontent = document.getElementsByClassName("tabcontent");<br>
+                            for (i = 0; i < tabcontent.length; i++) {<br>
+                            tabcontent[i].style.display = "none";<br>
+                            }<br>
+                            tablinks = document.getElementsByClassName("tablink");<br>
+                            for (i = 0; i < tablinks.length; i++) {<br>
+                            tablinks[i].style.backgroundColor = "";<br>
+                            }<br>
+                            document.getElementById(pageName).style.display = "block";<br>
+                            elmnt.style.backgroundColor = color;<br>
+                            }<br>
+                        </div>
+                    </div>
+
+                    <div id="code3" class="col-lg-12 col-md-12 tabcontent_code">
+                        <div class="info_code3">
+                            function openPage(pageName,elmnt,color) { <br>
+                            var i, tabcontent, tablinks;<br>
+                            tabcontent = document.getElementsByClassName("tabcontent");<br>
+                            for (i = 0; i < tabcontent.length; i++) {<br>
+                            tabcontent[i].style.display = "none";<br>
+                            }<br>
+                            tablinks = document.getElementsByClassName("tablink");<br>
+                            for (i = 0; i < tablinks.length; i++) {<br>
+                            tablinks[i].style.backgroundColor = "";<br>
+                            }<br>
+                        </div>
+                    </div>
+
+                    <div id="code4" class="col-lg-12 col-md-12 tabcontent_code">
+                        <div class="info_code4">
+                            function openPage(pageName,elmnt,color) { <br>
+                            var i, tabcontent, tablinks;<br>
+                            tabcontent = document.getElementsByClassName("tabcontent");<br>
+                            for (i = 0; i < tabcontent.length; i++) {<br>
+                            tabcontent[i].style.display = "none";<br>
+                            }<br>
+                            document.getElementById(pageName).style.display = "block";<br>
+                            elmnt.style.backgroundColor = color;<br>
+                            }<br>
+
+                            // Get the element with id="defaultOpen" and click on it<br>
+                            document.getElementById("defaultOpen").click();<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="api_concadws">
+                    <div class="title_concadws">
+                        <h1>APIs CONCAD WS</h1>
+                    </div>
+                    <p>A CONCAD WS provê uma API para recuperação de dados de empresas brasileiras atráves de seu CNPJ.
+                        Existem quatro tipos de consulta, veja as documentações abaixo</p>
+                    <hr>
+                    <p><i class="fa fa-caret-right"></i><a href="">API <span>Receita Federal CNPJ</span></a></p>
+                    <hr>
+                    <p><i class="fa fa-caret-right"></i><a href="">API <span>Receita Federal CPF</span></a></p>
+                    <hr>
+                    <p><i class="fa fa-caret-right"></i><a href="">API <span>CONCAD</span></a></p>
+                    <hr>
+                    <p><i class="fa fa-caret-right"></i><a href="">API <span>Simples Nacional</span></a></p>
+                    <hr>
+                    <p><i class="fa fa-caret-right"></i><a href="">API <span>Suframa</span></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent_code");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+<!--<script>-->
+<!--    // Add active class to the current button (highlight it)-->
+<!--    var header = document.getElementById("myDIV");-->
+<!--    var btns = header.getElementsByClassName("tablink");-->
+<!--    for (var i = 0; i < btns.length; i++) {-->
+<!--        btns[i].addEventListener("click", function() {-->
+<!--            var current = document.getElementsByClassName("active_1");-->
+<!--            current[0].className = current[0].className.replace(" active_1", "");-->
+<!--            this.className += " active_1";-->
+<!--        });-->
+<!--    }-->
+<!--</script>-->

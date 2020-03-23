@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<base href="/" />
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headTitle() ?>
+    <?php echo $this->headLink(); ?>
+    <?php echo $this->headScript(); ?>
+</head>
+
+<body>
+
+    <div id="login-side">
+    
+        <form method="post">
+        
+        	<?php echo $this->message(); ?>
+        
+            <div class="text-center mb-4">
+            	<img style="height:80px;" src="/assets/application/img/logo_concad.png" />
+            </div>
+            
+            <p class="text-center">
+               	Seja bem-vindo ao sistema de gerenciamento. Faça seu login para continuar!
+            </p>
+            
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    	<i class="fa fa-user"></i>
+                    </span>
+                </div>
+                <input required="required" class="form-control" type="text" name="lg" placeholder="Ex: nome@dominio.com.br" autofocus="autofocus">
+            </div>
+        
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    	<i class="fa fa-lock"></i>
+                    </span>
+                </div>
+                <input required="required" class="form-control" type="password" name="pw" placeholder="Digite sua senha">
+            </div>
+        
+            <button class="btn w-100 mb-4" type="submit">Login</button>
+            
+            <?php /*
+            <div class="text-center">
+                <a href="/recuperar-senha" class="text-light">
+                	Esqueceu sua senha? Clique aqui para recuperá-la!
+                </a>
+            </div>
+            */ ?>
+            
+            <input type="hidden" name="r" value="<?php echo \Tropaframework\Security\Security::antiInjectionItem($_GET['r']);  ?>" />
+			<input type="hidden" name="method" value="logar" />
+        </form>
+                
+    </div>
+
+</body>
+</html>

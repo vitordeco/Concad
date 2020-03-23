@@ -1,0 +1,110 @@
+<!--LINHA NAV-->
+<div class="hr_resultado">
+    <hr>
+</div>
+<!--FIM LINHA NAV-->
+
+<!--PÁGINA-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 pagina_consulta">
+            <ul>
+                <li><a href="/">HOME</a></li><i class="fa fa-angle-right"></i>
+                <li><a href="javascript:;">CONSULTA E SERVIÇOS</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--FIM PÁGINA-->
+
+<!--CONSULTA E SERVIÇOS-->
+<div class="container bloco_consultas_servicos">
+
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12">
+
+            <div class="col-lg-8 col-md-8 consultas">
+
+                <h1 class="title">CONSULTA E SERVIÇOS</h1>
+
+                <?php if( !\Model\ModelLogin::loginCheck($this->layout()->me) ): ?>
+                    <p class="text-left">Entre com suas informações de usuário para utilizar nossos serviços:</p>
+
+                    <form id="signin" class="navbar-form navbar-left validate" method="POST" action="/login">
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input id="email" type="text" class="form-control" name="lg" placeholder="E-mail" autofocus="autofocus">
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input id="password" type="password" class="form-control" name="pw" placeholder="Senha">
+                        </div>
+
+                        <button id="cod_acesso" type="submit">Fazer login</button>
+                        <?php echo \Tropaframework\Security\NoCSRF::generate("content"); ?>
+                        <input type="hidden" name="r" value="/consulta-e-servicos" />
+                        <input type="hidden" name="method" value="login" />
+
+                    </form>
+                <?php endif; ?>
+
+                <!--                <div class="col-lg-12 col-md-12 novo_cliente">-->
+                <!--                    <h1>Novo Cliente</h1>-->
+                <!--                    <li><a id="comprar_credito" href="/planos">Comprar Crédito</a></li>-->
+                <!--                </div>-->
+
+                <div class="col-lg-12 col-md-12 bloco_info_consulta">
+
+                    <div class="col-lg-4 col-md-4 info_cpf_consulta">
+
+                        <h1>CPF <span>DE TERCEIROS</span></h1>
+
+                        <h2>R$ XX,XX</h2>
+
+                        <img src="/assets/application/img/icon_onda.png" />
+
+                        <p>
+                            Saiba se o prestador de<br>
+                            serviço que você quer<br>
+                            contratar é de confiança.<br>
+                        </p>
+
+                        <br/>
+                        <a href="/consulta-e-servicos/cpf" class="consulte">CONSULTE</a>
+                        <a href="javascript:;"><p class="ver_ex">Ver exemplo</p></a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 info_cpf_consulta">
+
+                        <h1>CNPJ <span>DE TERCEIROS</span></h1>
+
+                        <h2>R$ XX,XX</h2>
+
+                        <img src="/assets/application/img/icon_onda.png" />
+
+                        <p>
+                            Saiba se o prestador de<br>
+                            serviço que você quer<br>
+                            contratar é de confiança.<br>
+                        </p>
+
+                        <br/>
+                        <a href="/consulta-e-servicos/cnpj" class="consulte">CONSULTE</a>
+                        <a href="javascript:;"><p class="ver_ex">Ver exemplo</p></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <?php echo $this->partial('partials/servicos'); ?>
+
+        </div>
+
+    </div>
+
+</div>
+<!--FIM COMPRA DE CRÉDITO-->

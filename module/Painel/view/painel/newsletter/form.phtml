@@ -1,0 +1,60 @@
+<form data-values='<?php echo json_encode($this->result); ?>' class="auto-values validate" method="post">
+
+    <div class="card mb-3">
+    	
+    	<div class="card-header">
+			<h5>Dúvidas frequentes</h5>
+		</div>
+
+		<div class="card-body">
+
+			<div class="row">
+            
+            	<div class="form-group col-sm-3">
+                    <label>Pergunta</label>
+                    <input class="form-control" type="text" name="pergunta" />
+                </div>
+                
+            	<div class="form-group col-sm-3">
+                    <label>Qual status do produto?</label>
+                    <select class="form-control" name="status">
+                		<option value="ativo" <?php echo $result->status=='ativo' ? 'selected="selected"' : null; ?>>Ativo</option>
+                		<option value="inativo" <?php echo $result->status=='inativo' ? 'selected="selected"' : null; ?>>Inativo</option>
+                    </select>
+                </div>
+            
+			</div>
+
+			<div class="row">
+			
+                <div class="form-group col-sm-6">
+                    <label>Resposta</label>
+                    <textarea class="form-control"name="resposta"></textarea>
+                </div>
+                
+			</div>
+
+        </div>
+        
+    </div>
+    
+    <div class="card mb-3">
+        
+        <div class="card-footer">
+        	
+            <button class="btn btn-sm btn-primary" type="submit">
+            	<i class="fa fa-dot-circle-o"></i> Salvar
+            </button>
+            
+        </div>
+        
+    </div>
+    
+	<input type="hidden" name="method" value="save" />
+	
+</form>
+
+<form method="post" style="display:none;" class="uploadSubmit">
+	<input type="file" name="file" onchange="$(this).parents('form').submit();" id="file" />
+	<input type="hidden" name="method" value="upload" />
+</form>

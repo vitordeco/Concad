@@ -1,0 +1,144 @@
+<!-- INTRODUÇÃO -->
+<div style="padding:10px 40px;">
+	<b style="font-size:20px; color:#7fb7aa; text-transform:uppercase;">Olá <?php echo $usuario->nome; ?>,</b>
+
+	<p style="margin-top:15px;">Informamos que o pedido <b style="font-size:20px; text-transform:uppercase;"><?php echo $pedido->pagamento_codigo; ?></b> foi <b style="color:#7fb7aa;">FINALIZADO</b> com sucesso.</p>
+
+	<p style="margin-top:15px;">É possível verificar mais detalhes em nosso site, basta acessar a seção "Meus Pedidos".</p>
+
+	<p style="margin-top:15px;">Se precisar de auxílio, <b>não responda a este e-mail</b>. Preencha o formulário de contato na Central de Atendimento de nosso site. O horário de funcionamento de nosso SAC é de segunda à sexta das 8hs às 18hs. Tenha em mãos o número de seu pedido.</p>
+
+	<!-- BOTÃO -->
+    <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/avaliacao/pedido/<?php echo $pedido->id_pedido; ?>" style="display:block; width:500px; margin:40px auto 0 auto; padding:15px 0; text-align:center; text-transform:uppercase; font-weight:bold; font-size:16px; background-color:#ffa401; color:#fff;">
+    	Clique aqui e avalie sua compra
+    </a>
+</div>
+
+<!-- RESUMO DO PEDIDO -->
+<div style="background-image:url('http://<?php echo $_SERVER['HTTP_HOST']; ?>/assets/bag365/img/email/title.jpg'); background-repeat:no-repeat; width:100%; height:40px; line-height:40px;">
+	<span style="background-color:#ffa401; color:#fff; font-size:20px; padding-left:40px; padding-right:20px; height:40px; line-height:40px; float:left;">
+		Dados do pedido
+	</span>
+</div>
+<table style="font-family:'Arial'; font-size:12px; color:#777; margin:20px 40px 0 40px; width:620px;" border="0" cellspacing="0">
+	<tr>
+		<td style="background-color:#ddd; padding:15px;">
+			<b>Código do pagamento:</b><br/>
+			<span style="text-transform:uppercase;"><?php echo $pedido->pagamento_codigo; ?></span>
+		</td>
+		<td style="background-color:#ddd; padding:15px; border-left:1px solid #aaa;">
+			<b>Forma de pagamento:</b><br/>
+			<?php echo $pedido->pagamento_tipo; ?>
+		</td>
+		<td style="background-color:#ddd; padding:15px; border-left:1px solid #aaa; color:#7fb7aa;">
+			<b>VALOR TOTAL:</b><br/>
+			<b>R$ <?php echo \Tropaframework\Helper\Convert::toReal($pedido->total + $pedido->frete_total - $pedido->desconto_total); ?></b>
+		</td>
+	</tr>
+</table>
+
+<!-- PRODUTOS -->
+<table style="font-family:'Arial'; font-size:12px; color:#777; margin:20px 40px 0 40px; width:620px;" border="0" cellspacing="0">
+	<tr>
+		<td style="background-color:#ddd; padding:10px 15px; color:#7fb7aa;">
+			<b>Produto</b>
+		</td>
+		<td style="background-color:#ddd; padding:10px 15px; color:#7fb7aa;">
+			<b>Entrega</b>
+		</td>
+		<td style="background-color:#ddd; padding:10px 15px; color:#7fb7aa;">
+			<b>Qtd</b>
+		</td>
+		<td style="background-color:#ddd; padding:10px 15px; color:#7fb7aa; width:60px;">
+			<b>Subtotal</b>
+		</td>
+	</tr>
+	
+	<?php foreach( $produtos as $produto ): ?>
+	<tr>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd;">
+			<b><?php echo !empty($produto->produto) ? $produto->produto : $produto->descricao; ?></b><br/>
+			Vendido e entregue por <?php echo $produto->loja; ?>
+		</td>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd;">
+			<b><?php echo $produto->frete_tipo; ?></b><br/>
+			de <?php echo $produto->frete_prazo; ?> à <?php echo ($produto->frete_prazo + 2); ?> dias úteis
+		</td>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd;">
+			<?php echo $produto->quantidade; ?>
+		</td>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd;">
+			R$ <?php $price = !empty($produto->subtotal) ? $produto->subtotal : ($produto->preco*$produto->quantidade); echo \Tropaframework\Helper\Convert::toReal($price); ?>
+		</td>
+	</tr>
+	<?php endforeach; ?>
+	
+	<?php if( !empty($pedido->desconto_total) ): ?>
+	<tr>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd; text-align:right;" colspan="3">
+			<b>DESCONTO:</b>
+		</td>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd;">
+			R$ <?php echo \Tropaframework\Helper\Convert::toReal($pedido->desconto_total); ?>
+		</td>
+	</tr>
+	<?php endif; ?>
+	
+	<tr>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd; text-align:right;" colspan="3">
+			<b>FRETE:</b>
+		</td>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd;">
+			R$ <?php echo \Tropaframework\Helper\Convert::toReal($pedido->frete_total); ?>
+		</td>
+	</tr>
+	
+	<tr>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd; text-align:right;" colspan="3">
+			<b>TOTAL:</b>
+		</td>
+		<td style="padding:10px 15px; border-bottom:1px solid #ddd;">
+			R$ <?php echo \Tropaframework\Helper\Convert::toReal($pedido->total + $pedido->frete_total - $pedido->desconto_total); ?>
+		</td>
+	</tr>
+</table>
+
+<!-- ENDEREÇOS -->
+<table style="font-family:'Arial'; font-size:12px; color:#777; margin:20px 40px 0 40px; width:620px;" border="0" cellspacing="0">
+	<tr>
+		<td style="background-color:#ddd; padding:10px 15px; color:#7fb7aa;">
+			<b>Endereço de entrega</b>
+		</td>
+		<td style="background-color:#ddd; padding:10px 15px; color:#7fb7aa;">
+			<b>Endereço de cobrança</b>
+		</td>
+	</tr>
+	
+	<tr>
+		<td style="padding:10px 15px;">
+			Rua <?php echo $usuario->entrega->logradouro; ?>, <?php echo $usuario->entrega->numero; ?><br/>
+			<b>Bairro:</b> <?php echo $usuario->entrega->bairro; ?><br/>
+			<b>Cidade:</b> <?php echo $usuario->entrega->cidade; ?> / <?php echo $usuario->entrega->estado; ?><br/>
+			<b>CEP:</b> <?php echo $usuario->entrega->cep; ?><br/>
+			
+			<?php if( !empty($usuario->entrega->complemento) ): ?>
+			<b>Complemento:</b> <?php echo $usuario->entrega->complemento; ?>
+			<?php endif; ?>
+		</td>
+		<td style="padding:10px 15px; border-left:1px solid #ddd;">
+			Rua <?php echo $usuario->cobranca->logradouro; ?>, <?php echo $usuario->cobranca->numero; ?><br/>
+			<b>Bairro:</b> <?php echo $usuario->cobranca->bairro; ?><br/>
+			<b>Cidade:</b> <?php echo $usuario->cobranca->cidade; ?> / <?php echo $usuario->cobranca->estado; ?><br/>
+			<b>CEP:</b> <?php echo $usuario->cobranca->cep; ?><br/>
+			
+			<?php if( !empty($usuario->cobranca->complemento) ): ?>
+			<b>Complemento:</b> <?php echo $usuario->cobranca->complemento; ?>
+			<?php endif; ?>
+		</td>
+	</tr>
+</table>
+
+<!-- BOTÃO -->
+<a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/avaliacao/pedido/<?php echo $pedido->id_pedido; ?>" style="display:block; width:500px; margin:40px auto 0 auto; padding:15px 0; text-align:center; text-transform:uppercase; font-weight:bold; font-size:16px; background-color:#ffa401; color:#fff;">
+	Clique aqui e avalie sua compra
+</a>

@@ -1,0 +1,74 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12 blc_login">
+
+            <form method="post" class="tela_login validate">
+
+                <ul class="auth-menu">
+                    <li class="<?php echo ($this->layout()->routes['controller'] == 'login') ? 'active' : null; ?>"><a href="/login">Login</a></li>
+                    <li class="<?php echo ($this->layout()->routes['controller'] == 'cadastro') ? 'active' : null; ?>"><a href="/cadastro">Cadastro</a></li>
+                </ul>
+
+                <div class="logo_login">
+                    <a href="/"><img src="/assets/application/img/logo_concad_login.png" alt="Concad" /></a>
+                </div>
+
+                <p>Preencha os campos abaixo:</p>
+
+                <div class="form-group text-left text-muted">
+                    Nome ou Razão social: *<br/>
+                    <input name="nome" type="text" class="form-control-login" autofocus="autofocus" />
+                </div>
+
+                <div class="form-group text-left text-muted">
+                    CPF ou CNPJ: *<br/>
+                    <input name="cpf_cnpj" type="text" class="form-control-login" onfocus="javascript:retirarFormatacao(this);" onblur="javascript:formatarCampo(this);" maxlength="14" />
+                </div>
+
+                <div class="form-group text-left text-muted">
+                    Celular:<br/>
+                    <input name="telefone" type="tel" class="form-control-login cellphone" />
+                </div>
+
+                <div class="form-group text-left text-muted">
+                    E-mail/Login: *<br/>
+                    <input name="email" type="text" class="form-control-login" />
+                </div>
+
+                <div class="row text-left text-muted">
+
+                    <div class="col-sm-6">
+                        Senha:<br/>
+                        <input name="senha" type="password" class="form-control-login" id="password-input" />
+                    </div>
+
+                    <div class="col-sm-6">
+                        Confirmar Senha:<br/>
+                        <input name="senha_confirmar" type="password" class="form-control-login" />
+                    </div>
+
+                </div>
+
+                <div class="text-left" style="padding: 10px 0 0 0;">
+                    <small><b>Força da senha:</b> Crie uma senha segura, contendo no mínimo 6 caracteres, com letras maiúsculas, minúsculas, números e caracteres especiais como @ ou #.</small>
+                    <ul id="password-force"></ul>
+                </div>
+
+                <div class="form-group row login-submit">
+                    <div class="col-12">
+                        <button data-dismiss="modal" type="submit" class="btn btn-login btn-xl">Cadastrar</button>
+                    </div>
+                </div>
+
+                <?php echo \Tropaframework\Security\NoCSRF::generate("content"); ?>
+                <input type="hidden" name="method" value="save" />
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

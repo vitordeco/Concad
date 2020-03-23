@@ -1,0 +1,33 @@
+<?php
+//link
+$link = "/" . $this->layout()->routes['controller'] . "/" . $this->layout()->routes['action'];
+if( !empty($this->layout()->routes['id']) ) $link .= "/" . $this->layout()->routes['id'];
+
+//query
+$q = \Tropaframework\Security\Security::antiInjection($_GET);
+unset($q['page']);
+$q = http_build_query($q);
+$q = !empty($q) ? '&' . $q : null; 
+?>
+
+<ul class="pagination mb-0">
+                
+	<li class="page-item">
+		<a class="page-link" href="<?php echo $link; ?>?page=<?php echo $result['pagination']['prev'] . $q; ?>">
+			<i class="fa fa-angle-left" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	<?php foreach ( $result['pagination']['pages'] as $page ){?>
+    <li class="page-item <?php echo $page == $_GET['page'] ? 'active' : ''; ?> <?php echo empty($_GET['page']) && $page == 1 ? 'active' : '';?>">
+    	<a class="page-link" href="<?php echo $page != $_GET['page'] ? $link . '?page=' . $page . $q : 'javascript:;'; ?>"><?php echo $page;?></a>
+    </li>
+    <?php } ?>
+    
+    <li class="page-item">
+    	<a class="page-link" href="<?php echo $link; ?>?page=<?php echo $result['pagination']['next'] . $q; ?>">
+    		<i class="fa fa-angle-right" aria-hidden="true"></i>
+    	</a>
+    </li>
+    
+</ul>

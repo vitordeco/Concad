@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<base href="/" />
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headTitle() ?>
+    <?php echo $this->headLink(); ?>
+    <?php echo $this->headScript(); ?>
+</head>
+                            
+<body>
+
+	<div id="login-side">
+    
+        <form method="post" class="validate">
+        
+        	<?php echo $this->message(); ?>
+        
+            <div class="text-center mb-4">
+            	<img style="height:80px;" src="/assets/application/img/logos/logo-alt.png" />
+            </div>
+            
+            <p class="text-center text-light">
+               	Digite a nova senha de acesso para sua conta:
+            </p>
+                            
+			<div class="input-group mb-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    	<i class="icon-lock"></i>
+                    </span>
+                </div>
+                <input class="form-control" type="password" name="senha" placeholder="Digite uma nova senha" id="password-input" />
+            </div>
+
+			<div class="input-group mb-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    	<i class="icon-lock"></i>
+                    </span>
+                </div>
+                <input class="form-control" type="password" name="senha_confirmar" placeholder="Confirme sua nova senha" />
+            </div>
+
+    		<ul id="password-force" style="max-width:500px;"></ul>
+			<small class="text-light"><b>Força da senha:</b> Crie uma senha segura, contendo no mínimo 6 caracteres, com letras maiúsculas, minúsculas, números e caracteres especiais como @ ou #.</small>
+			
+			<button class="btn w-100 mt-4 mb-4" type="submit">Redefinir senha</button>
+            
+            <div class="text-center">
+                <a href="/login" class="text-light">
+                	<i class="fa fa-caret-left"></i> 
+                	Voltar para o login
+                </a>
+            </div>     
+            
+			<input type="hidden" name="r" value="<?php echo \Tropaframework\Security\Security::antiInjectionItem($_GET['r']);  ?>" />
+			<input type="hidden" name="method" value="redefinirSenhaEmail" />
+			<?php echo \Tropaframework\Security\NoCSRF::generate('content'); ?>
+        </form>
+                
+    </div>
+
+</body>
+</html>

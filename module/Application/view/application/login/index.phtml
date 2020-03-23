@@ -1,0 +1,90 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12 blc_login">
+
+            <form method="post" class="tela_login validate">
+
+                <ul class="auth-menu">
+                    <li class="<?php echo ($this->layout()->routes['controller'] == 'login') ? 'active' : null; ?>"><a href="/login">Login</a></li>
+                    <li class="<?php echo ($this->layout()->routes['controller'] == 'cadastro') ? 'active' : null; ?>"><a href="/cadastro">Cadastro</a></li>
+                </ul>
+
+                <div class="logo_login">
+                    <a href="/"><img src="/assets/application/img/logo_concad_login.png" alt="Concad" /></a>
+                </div>
+
+                <p>Entre com suas informações de usuário:</p>
+
+                <div class="form-group">
+                    <input id="usuario" name="lg" type="text" placeholder="E-mail" class="form-control-login" autocomplete="off" autofocus="autofocus">
+                </div>
+
+                <div class="form-group">
+                    <input id="password" name="pw" type="password" placeholder="Senha" class="form-control-login">
+                </div>
+
+                <div class="form-group row login-submit">
+
+                    <div class="col-lg-6 col-md-6">
+                        <button type="submit" class="btn btn-login btn-xl">Fazer Login</button>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <a href="#" class="btn btn-secondary btn-xl" data-toggle="modal" data-target="#modalRecuperarSenha">Esqueceu a senha?</a>
+                    </div>
+
+                </div>
+
+                <?php echo \Tropaframework\Security\NoCSRF::generate("content"); ?>
+                <input type="hidden" name="method" value="login" />
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL RECUPERAR SENHA -->
+<div class="modal fade" id="modalRecuperarSenha">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                Esqueceu sua senha?
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <form method="POST" class="validate" action="/recuperar-senha">
+
+                    <div class="login-form">
+
+                        <div class="form-group">
+                            <input id="email-recuperacao" name="email" placeholder="Insira seu e-mail de cadastro" class="form-control-login" autofocus="autofocus" />
+                        </div>
+
+                        <div class="form-group">
+                            <button style="width:100%;" type="submit" class="btn btn-primary btn-xl">Recuperar Senha</button>
+                        </div>
+
+                    </div>
+
+                    <input type="hidden" name="method" value="enviarEmailParaRedefinir" />
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

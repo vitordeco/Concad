@@ -1,0 +1,157 @@
+@media(max-width:500px){
+	body {
+		overflow-x: hidden !important;
+		width: 500px;
+	}
+	nav.nav-menu {
+		left: -250px;
+	}
+	nav.nav-menu.active {
+		margin-left: 250px;
+		width:250px;
+		height: calc(100vh - 55px);
+    	overflow-x: scroll;
+	}
+	section.content-panel {
+		width:100%;
+	}
+	header .top-menu {
+		width:100%;
+		padding: 0px 25px;
+		text-align: center;
+	}
+	header a.logo {
+		background-size: auto 30px;
+		width: calc(100%);
+	}
+	section.content-panel.active {
+	}
+	nav.nav-menu.active ul li a {
+		text-align:left;
+	}
+	nav.nav-menu.active ul li span {
+		text-overflow: unset;
+		white-space: unset;
+		overflow: unset;
+		width: unset;
+		display: unset;
+		font-size:18px;
+	}
+	nav.nav-menu.active ul li i {
+		margin-right:13px;
+		font-size:18px;
+	}
+	header a.hamburguer {
+		float:right;
+		right: 10px;
+		position: absolute;
+		text-align: left;
+	}
+	header a.logo {
+	float: unset;
+	display: inline-block;
+	width: 201px;
+	}
+	header a.mobile {
+		position:absolute;
+		top:13px;
+		left: 20px;
+		font-size:30px;
+		text-decoration: none !important;
+		color:var(--cor-principal) !important;
+	}
+	.filter button,
+	.filter input,
+	.filter select {
+		width:100%;
+		height: 49px;
+		background: #FFF;
+		margin: 3px 0px;
+		border-radius: 0px;
+		background: rgba(255,255,255,0.7);
+		padding: 10px 13px;
+		font-size: 15px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+	.filter button {
+		background: var(--cor-principal);
+		color: #FFF;
+		border: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+	.gj-datepicker-bootstrap [role=right-icon] button {
+		margin-right:0px;
+	}
+	.gj-icon {
+		margin-top:4px;
+	}
+	.filter form {
+		width: 250px;
+		height: calc(100vh - 55px);
+		overflow-x: scroll;
+		position: fixed;
+		left: -350px;
+		display: block;
+		top: 55px;
+		background: #4260a5;
+		color: #fff;
+		z-index: 99999;
+		padding: 54px 0 0 0;
+		transition:all 0.2s;
+		box-shadow: 6px 15px 20px 10px rgba(0, 0, 0, 0.16);
+	}
+	.filter form .row {
+		padding:0px;
+		margin:0px;
+	}
+	.filter form .row > div {
+		width:100%;
+		padding:0px;
+	}
+	.filter form.active {
+		left: 0px;
+	}
+	.filter form.active:after {
+		width:100%;
+		height:100vh;
+		background:rgba(0,0,0,0.28);
+		position:fixed;
+		content:'';
+		top:55px;
+		left:0;
+		z-index:-2;
+	}
+	.filter form:before {
+		content:'Filtrar';
+		width:100%;
+		position:absolute;
+		background: rgba(0,0,0,0.28);
+		left:0;
+		top:0;
+		padding: 14.5px 18px;
+		font-weight:bold;
+		color:#FFF;
+		font-size: 18px;
+	}
+	.filter form input, 
+	.filter form select {
+	margin-bottom: -3px;
+	}
+	.filter form button {
+		margin-top: 3px;
+	}
+	/*desktop adaption*/
+	.desktop {
+		display:none;
+	}
+	.mobile {
+		display:inline-block !important;
+	}
+	nav.nav-menu ul li.menu-link ul li a {
+		font-size:16px;
+	}
+}

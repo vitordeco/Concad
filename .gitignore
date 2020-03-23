@@ -1,0 +1,13 @@
+.buildpath
+.project
+.settings
+.idea
+_logs/*
+#DOCS/*
+public/tmp/*
+config/autoload/local.php
+config/autoload/homolog.php
+public/assets/*
+!public/assets/application/
+!public/assets/painel/
+/_logs/

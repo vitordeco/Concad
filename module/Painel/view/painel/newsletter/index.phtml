@@ -1,0 +1,66 @@
+<div class="filter-page">
+
+	<div class="mobile filter-mobile">
+	
+		<a href="javascript:;" class="color-principal">
+			<i class="fa fa-filter"></i>
+			<span>Filtrar</span>
+		</a>
+	
+	</div>
+
+    <form data-values='<?php echo json_encode($this->get); ?>' class="container-fluid desktop">
+    
+        <div class="row">
+            
+    	</div>
+    </form>
+
+</div>
+
+<div class="row">
+
+	<div class="col-lg-12">
+	
+		<div class="card">
+		
+			<div class="card-header">
+				<form method="get">
+    				<button type="submit" name="export" value="csv" class="bt bt-inline bt-round bg-green">
+    					Exportar CSV <i class="fa fa-download"></i>
+    				</button>
+				</form>
+				
+				<span class="float-right">Exibindo <?php echo $this->news['pagination']['displaying']; ?> de <?php echo $this->produtos['pagination']['records']; ?> resultados</span>
+			</div>
+			
+			<div class="card-body">
+			
+				<table class="table table-responsive-sm table-hover table-outline">
+				
+					<thead class="thead-light">
+						<tr>
+                            <th>Emails</th>
+                        </tr>
+					</thead>
+					
+                    <tbody>
+                    	<?php foreach( $this->news['result'] as $row ): ?>
+                        <tr>
+                            <td><?php echo $row['email']; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+					</tbody>
+					
+				</table>
+			
+				<p class="float-right">Exibindo <?php echo $this->news['pagination']['displaying']; ?> de <?php echo $this->news['pagination']['records']; ?> resultados</p>
+                <?php echo $this->pagination($this->news['pagination']); ?>
+            
+    		</div>
+    		
+    	</div>
+    	
+    </div>
+    
+</div>

@@ -1,0 +1,99 @@
+#result{
+
+}
+
+#result form.search{background-color: #efefef;width: 100%;height: 45px;margin-bottom: 20px;border-radius: 2px;}
+#result form.search > input[type='text']{width: 90%;border: none;background: transparent;line-height: 45px;padding-left: 15px;}
+#result form.search > .btn{line-height: 45px;box-sizing: border-box;height: 45px;width: 10%;padding: 0;margin: 0;border: none;float: right;vertical-align: top;}
+
+#result .image{border-radius: 2px;overflow: hidden;}
+#result .image > img{width: 100%;}
+
+#result h1.title{color: #299fb8;text-transform: uppercase;}
+
+#result ul.list{margin: 0;padding: 0;}
+#result ul.list > li{display: block;line-height: 30px;}
+#result ul.list > li > i{width: 25px;text-align: center;}
+
+#result .title-featured{margin: 0 0 20px 0;background-color: #1f8cc6;color: #fff;text-transform: uppercase;font-size: 140%;font-weight: normal;line-height: 45px;border-radius: 2px;padding: 0 15px;}
+#result .title-featured > i{float: right;line-height: 45px;}
+
+#result .tabs{width: 100%;display: table;}
+#result .tabs > .tabclick{border: 0;background: none;width: 25%;text-align: center;float: left;color: #d5d5d5;font-weight: bold;line-height: 45px;outline: none;}
+#result .tabs > .tabclick:hover,
+#result .tabs > .tabclick.tabactive{color: #1f8cc6;border-bottom: 3px solid #1f8cc6;}
+#result .tabcontent{background-color: #f9f9f9;padding: 20px;}
+#result .tabcontent .title{font-weight:500;}
+#result .tabcontent .title:first-child{margin-top:0}
+#result table.default th{}
+#result table.default th, #result table.default td{padding: 5px 10px 5px 0; font-weight: normal; font-size: 90%}
+
+#result ul.links{margin: 15px 0;display: table;width: 100%;}
+#result ul.links > li{
+    margin-right: 15px;
+}
+#result ul.links > li > a{display: block;border: 2px solid #299fb8;color: #299fb8;font-weight: bold;padding: 8px 10px;}
+#result ul.links > li > a:hover{text-decoration:underline;}
+
+@media (max-width: 576px)
+{
+    #result{
+
+    }
+
+    #result form.search{
+
+    }
+    #result form.search > input[type='text']{
+
+    }
+    #result form.search > .btn{
+
+    }
+
+    #result .image{
+
+    }
+    #result .image > img{
+
+    }
+
+    #result h1.title{
+
+    }
+
+    #result ul.list{
+
+    }
+    #result ul.list > li{
+
+    }
+    #result ul.list > li > i{
+
+    }
+
+    #result .title-featured{margin-top: 20px;}
+    #result .title-featured > i{
+
+    }
+
+    #result .tabs{
+
+    }
+    #result .tabs > .tabclick{width: 100%;}
+    #result .tabs > .tabclick:hover,
+    #result .tabs > .tabclick.tabactive{
+
+    }
+    #result .tabcontent{margin: 0;}
+
+    #result ul.links{
+
+    }
+    #result ul.links > li{
+
+    }
+    #result ul.links > li > a{
+
+    }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<base href="/" />
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headTitle() ?>
+    <?php echo $this->headLink(); ?>
+    <?php echo $this->headScript(); ?>
+</head>
+
+<body>
+
+	<div id="login-side">
+    
+        <form method="post">
+        
+        	<?php echo $this->message(); ?>
+        
+            <div class="text-center mb-4">
+            	<img style="height:80px;" src="/assets/application/img/logos/logo-alt.png" />
+            </div>
+            
+            <p class="text-center text-light">
+               	Digite seu e-mail de cadastro para recuperar sua senha:
+            </p>
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    	<i class="icon-user"></i>
+                    </span>
+                </div>
+                
+				<input required="required" class="form-control" type="text" name="email" placeholder="Ex: nome@payhubbrasil.com.br" />
+            </div>
+        
+			<button class="btn w-100 mb-4" type="submit">Recuperar senha</button>
+            
+            <div class="text-center">
+                <a href="/login" class="text-light">
+                	<i class="fa fa-caret-left"></i> 
+                	Voltar para o login
+                </a>
+            </div>
+                                        
+			<input type="hidden" name="r" value="<?php echo \Tropaframework\Security\Security::antiInjectionItem($_GET['r']);  ?>" />
+			<input type="hidden" name="method" value="enviarEmailParaRedefinir" />
+			<?php echo \Tropaframework\Security\NoCSRF::generate('content'); ?>
+        </form>
+                
+    </div>
+
+</body>
+</html>

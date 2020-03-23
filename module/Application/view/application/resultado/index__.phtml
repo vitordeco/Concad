@@ -1,0 +1,198 @@
+<?php
+/**
+ * @var $result \Model\Result\ResultPessoaJuridica
+ */
+
+use Model\ModelLogin;
+
+?>
+
+<!--LINHA NAV-->
+<div class="hr_resultado">
+    <hr>
+</div>
+<!--FIM LINHA NAV-->
+
+<!--PÁGINA-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 pagina">
+            <ul>
+                <li><a href="/">HOME</a></li><i class="fa fa-angle-right"></i>
+                <li><a href="javascript:;">RESULTADO</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--FIM PÁGINA-->
+
+<!--SECTION RESULTADO DA BUSCA-->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-5 col-md-5 coluna_1_resultado">
+
+            <div class="btn_busca">
+                <form class="example validate" method="POST" action="/consulta-e-servicos">
+                    <input type="text" name="cnpj" value="<?php echo $result->getCnpj(); ?>">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="hidden" name="method" value="consultarCnpj" />
+                    <?php echo \Tropaframework\Security\NoCSRF::generate('content'); ?>
+                </form>
+            </div>
+
+            <img src="/assets/application/img/predio.jpg">
+
+            <h1>Sobre <?php echo $result->getNomeEmpresarial(); ?></h1>
+            <p>Nenhuma informação sobre a empresa!</p>
+
+            <hr>
+
+            <div class="number"><i class="fa fa-globe"></i> <a href="javascript:;"><?php echo $result->getCnpj(); ?></a></div>
+            <div class="empresa"><i class="fa fa-check-circle"></i><a href="javascript:;"><?php echo $result->getNomeFantasia(); ?></a></div>
+            <div class="phone"><i class="fa fa-phone"></i><a href="javascript:;"><?php echo $result->getTelefone(); ?></a></div>
+            <div class="email"><i class="fa fa-envelope"></i><a href="javascript:;"><?php echo $result->getEmail(); ?></a></div>
+            <div class="endereco"><i class="fa fa-map-marker"></i><a href="javascript:;"><?php echo $result->getEnderecoCompleto(); ?></a></div>
+
+        </div>
+
+        <div class="col-lg-7 col-md-7 coluna_2_resultado">
+
+            <div class="nome_empresa">
+                <a><?php echo $result->getRazaoSocial(); ?></a>
+                <i class="fa fa-building"></i>
+            </div>
+
+            <div id="myDIV">
+                <button class="tablink active_1" onclick="openPage('aba1', this, '#fff')"id="defaultOpen"><p>Receita Federal</p></button>
+                <button class="tablink" onclick="openPage('aba2', this, '#fff')"><p>Simples Nacional</p></button>
+                <button class="tablink" onclick="openPage('aba3', this, '#fff')"><p>Sintegra</p></button>
+                <button class="tablink" onclick="openPage('aba4', this, '#fff')"><p>Suframa</p></button>
+            </div>
+
+            <div id="aba1" class="tabcontent">
+
+                <h3>ATIVIDADE ECONÔMICA PRIMÁRIA</h3>
+                <?php foreach( $result->getAtividadePrincipal() as $row ): ?>
+                <div class="col-lg-2 col-md-2 codigo">
+                    <p>CÓDIGO</p>
+                    <p><?php echo $row->code; ?></p>
+                </div>
+                <div class="col-lg-10 col-md-10 descricao">
+                    <p>DESCRIÇÃO</p>
+                    <p><?php echo $row->text; ?></p>
+                </div>
+                <?php endforeach; ?>
+
+                <hr />
+
+                <h3>ATIVIDADE ECONÔMICA SECUNDÁRIAS</h3>
+                <?php foreach( $result->getAtividadesSecundarias() as $row ): ?>
+                <div class="col-lg-2 col-md-2 codigo">
+                    <p>CÓDIGO</p>
+                    <p><?php echo $row->code; ?></p>
+                </div>
+                <div class="col-lg-10 col-md-10 descricao">
+                    <p>DESCRIÇÃO</p>
+                    <p><?php echo $row->text; ?></p>
+                </div>
+                <?php endforeach; ?>
+
+                <hr />
+
+                <h3>CÓDIGO E DESCRIÇÃO DA NATUREZA JURÍDICA</h3>
+                <div class="codigo">
+                    <p><?php echo $result->getNaturezaJuridica(); ?></p>
+                </div>
+
+                <hr />
+
+                <h3>CAPITAL SOCIAL</h3>
+                <div class="codigo">
+                    <p>R$ <?php echo $result->getCapitalSocial(); ?></p>
+                </div>
+
+                <hr />
+
+                <h3>QSA</h3>
+                <?php foreach( $result->getQsa() as $row ): ?>
+                <div class="col-lg-6 col-md-6 codigo">
+                    <p>NOME</p>
+                    <p><?php echo $row->nome; ?></p>
+                    <?php echo $row->nome_rep_legal; ?>
+                    <?php echo $row->pais_origem; ?>
+                </div>
+                <div class="col-lg-6 col-md-6 descricao">
+                    <p>QUALIFICAÇÃO</p>
+                    <p><?php echo $row->qual; ?></p>
+                    <?php echo $row->qual_rep_legal; ?>
+                </div>
+                <?php endforeach; ?>
+                
+                <hr />
+
+
+            </div>
+
+            <div id="aba2" class="col-lg-12 col-md-12 tabcontent">
+                <h3>RECEITA FEDERAL</h3>
+                <hr>
+
+                <div class="col-lg-6 col-md-6">
+                    <p>CÓDIGO</p>
+                    <p>6201501</p>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <p>CÓDIGO</p>
+                    <p>6201501</p>
+                </div>
+            </div>
+
+            <div id="aba3" class="col-lg-12 col-md-12 tabcontent">
+                <h3>SINTEGRA</h3>
+                <hr>
+
+            </div>
+
+            <div id="aba4" class="col-lg-12 col-md-12 tabcontent">
+                <h3>SIMPLES NACIONAL</h3>
+                <hr>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+            <li><a id="salvar_doc" href="#">SALVAR CONSULTA</a></li>
+            <li><a id="enviar_sms" href="#">ENVIAR VIA SMS</a></li>
+            <li class="pesquisa_vinculo"><a id="pesquisa" href="#">PESQUISA VÍNCULOS</a></li>
+        </div>
+
+        <div style="clear: both;"></div>
+
+    </div>
+
+</div>
+<!--FIM SECTION RESULTADO DA BUSCA-->
+
+<script type="text/javascript">
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+
+        $('.active_1').removeClass('active_1');
+        elmnt.classList.add('active_1');
+    }
+    document.getElementById("defaultOpen").click();
+</script>

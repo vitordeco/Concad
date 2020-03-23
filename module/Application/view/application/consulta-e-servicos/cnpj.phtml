@@ -1,0 +1,201 @@
+<!--LINHA NAV-->
+<div class="hr_resultado">
+    <hr>
+</div>
+<!--FIM LINHA NAV-->
+
+<!--PÁGINA-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 pagina_consulta">
+            <ul>
+                <li><a href="/">HOME</a></li><i class="fa fa-angle-right"></i>
+                <li><a href="/consulta-e-servicos">CONSULTA E SERVIÇOS</a></li><i class="fa fa-angle-right"></i>
+                <li><a href="javascript:;">COMPLETA CNPJ</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--FIM PÁGINA-->
+
+<!--CONSULTAS E SERVIÇOS-->
+<div class="container bloco_completa_cpf">
+
+    <div class="row">
+
+        <div class="col-lg-8 col-md-8">
+
+            <h1 class="title">COMPLETA CNPJ</h1>
+
+            <form class="validate" method="post">
+
+                <label class="input-group">
+                    Digite o CNPJ que deseja pesquisar: <br/>
+                    <input type="tel" class="form-control-login cnpj" name="cnpj" autofocus="autofocus" />
+                </label>
+                <br/>
+
+                <div class="saldo_completa_cpf">
+                    <p>SALDO R$ XX,XX</p>
+                </div>
+
+                <button type="submit" class="btn btn-login" style="margin: 10px 0 0 0;">CONSULTAR AGORA</button>
+
+                <input type="hidden" name="method" value="consultarCnpj" />
+                <?php echo \Tropaframework\Security\NoCSRF::generate("content"); ?>
+            </form>
+
+            <br/>
+            <div class="col-lg-12 col-md-12 hr_completa_cpf"></div>
+
+            <div class="texto_info_cpf">
+                <p>A consulta completa utiliza o mais atual sistema da Serasa Experian para acesso instantâneo, por meio do CPF, ao maior banco de dados do gênero no Brasil, que reúne, com exclusiva cobertura nacional, informações sobre a quantidade de:</p>
+            </div>
+
+            <div class="col-lg-12 col-md-12 bloco_info_completa_cpf">
+                <div class="col-lg-6 col-md-6 condicoes_completa_cpf">
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Protestos</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Cheques sem fundos</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Pendências e restrições financeiras</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Dívidas vencidas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 condicoes_completa_cpf">
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Ações judiciais (Executivas, de Busca e Apreensão e de Execução Fiscal da Justiça Federal)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Participação em empresa falida</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="texto_info_cpf">
+                <p>Caso o contratante seja pessoa jurídica, além das informações citadas, o sistema também informa, se disponível:</p>
+            </div>
+
+            <div class="col-lg-12 col-md-12 bloco_info_completa_cpf">
+
+                <div class="col-lg-6 col-md-6 condicoes_completa_cpf">
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Serasa Score</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Grafias do nome</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Grafias semelhantes com outro CPF</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 condicoes_completa_cpf">
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Participações societárias</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Telefones e endereços alternativos</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 icon_texto_completa_cpf">
+                        <div class="col-lg-1 col-md-1 icon_facircle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="col-lg-11 col-md-11 text_condicoes_cpf">
+                            <p>Consultas a Serasa</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="texto_info_cpf">
+                <p>Caso não haja saldo suficiente no momento da consulta, uma compra automática será feita utilizando algum cartão de crédito armazenado.</p>
+            </div>
+
+            <div class="consulta_terceiros">
+                <p>Consulta disponível para empresas e CPF's de terceiros</p>
+            </div>
+
+            <div class="veja_condicoes_uso">
+                <a href="#!"><p>Veja condições de uso</p></a>
+            </div>
+
+        </div>
+
+        <?php echo $this->partial('partials/servicos'); ?>
+
+    </div>
+
+</div>
+<!--FIM COMPRA DE CRÉDITO-->

@@ -1,0 +1,92 @@
+<div class="filter-page">
+
+	<div class="mobile filter-mobile">
+	
+		<a href="javascript:;" class="color-principal">
+			<i class="fa fa-filter"></i>
+			<span>Filtrar</span>
+		</a>
+	
+	</div>
+
+    <form data-values='<?php echo json_encode($this->get); ?>' class="container-fluid desktop">
+    
+        <div class="row">
+
+            <label class="col-sm-2">
+                Nome no banner: <br/>
+                <input class="form-control" type="text" name="banner" placeholder="Filtrar por nome" />
+            </label>
+
+            <div class="col-sm-4">
+                <button type="submit" class="mt-4">
+                    <i class="fa fa-search"></i> Filtrar
+                </button>
+            </div>
+    		
+    	</div>
+    </form>
+
+</div>
+
+<div class="card">
+
+    <div class="card-header">
+        <a class="btn btn-success" href="/painel/<?php echo $this->layout()->routes['controller'];?>/form" class="mt-4">
+            <i class="fa fa-plus"></i> Novo
+        </a>
+
+        <span class="float-right">Exibindo <?php echo $this->result['pagination']['displaying']; ?> de <?php echo $this->result['pagination']['records']; ?> resultados</span>
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-responsive-sm table-hover table-outline">
+
+            <thead class="thead-light">
+                <tr>
+                    <th>Nome do banner</th>
+                    <th>Link</th>
+                    <th style="width:60px"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach( $this->result['result'] as $row ): ?>
+                <tr>
+                    <td><?php echo $row['banner']; ?></td>
+                    <td><?php echo $row['link']; ?></td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown-menu-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-cogs"></i>
+                            </button>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/painel/<?php echo $this->layout()->routes['controller'];?>/form?id=<?php echo $row['id_banner']; ?>">
+                                    Editar
+                                </a>
+
+                                <form method="post" class="validate">
+                                    <a class="dropdown-item" href="javascript:;" onclick="return confirm('Deseja realmente excluir?') ? $(this).parents('form').submit() : null;">
+                                        Excluir
+                                    </a>
+
+                                    <input type="hidden" name="id" value="<?php echo $row['id_banner']; ?>" />
+                                    <input type="hidden" name="method" value="delete" />
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+
+        </table>
+
+        <p class="float-right">Exibindo <?php echo $this->result['pagination']['displaying']; ?> de <?php echo $this->result['pagination']['records']; ?> resultados</p>
+        <?php echo $this->pagination($this->result['pagination']); ?>
+
+    </div>
+
+</div>

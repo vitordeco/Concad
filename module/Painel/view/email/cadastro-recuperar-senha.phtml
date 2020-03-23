@@ -1,0 +1,8 @@
+<div style="padding:10px 40px;">
+	<p>Olá <b><?php echo $nome; ?></b>,</p>
+	<p>Você solicitou uma alteração de senha para seu cadastro, né?!</p>
+</div>
+
+<a href="https://<?php echo $_SERVER['HTTP_HOST']; ?>/recuperar-senha/redefinir-email?secure=<?php echo $hash; ?>" style="display:block; width:500px; margin:40px auto 0 auto; padding:15px 0; text-align:center; text-transform:uppercase; font-weight:bold; font-size:16px; background-color:#00cdff; color:#fff;">
+	CLIQUE AQUI PARA DEFINIR UMA NOVA SENHA DE ACESSO
+</a>

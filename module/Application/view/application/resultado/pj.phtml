@@ -1,0 +1,269 @@
+<?php
+/**
+ * @var $result \Model\Result\ResultPessoaJuridica
+ */
+?>
+
+<!--LINHA NAV-->
+<div class="hr_resultado">
+    <hr>
+</div>
+<!--FIM LINHA NAV-->
+
+<!--PÁGINA-->
+<div class="container">
+    <div class="row">
+        <div class="pagina">
+            <ul>
+                <li><a href="/">HOME</a></li><i class="fa fa-angle-right"></i>
+                <li><a href="javascript:;">RESULTADO</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--FIM PÁGINA-->
+
+<!--SECTION RESULTADO DA BUSCA-->
+<div id="result" class="container text-muted">
+
+    <div class="row">
+
+        <div class="col-sm-5">
+
+            <form class="search validate" method="POST" action="/consulta-e-servicos">
+                <input type="text" name="cnpj" value="<?php echo $result->getCnpj(); ?>">
+                <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                <input type="hidden" name="method" value="consultarCnpj" />
+                <?php echo \Tropaframework\Security\NoCSRF::generate('content'); ?>
+            </form>
+
+            <div class="image">
+                <img src="/assets/application/img/predio.jpg" />
+            </div>
+
+            <h1 class="title">Sobre <?php echo $result->getNomeEmpresarial(); ?></h1>
+            <p class="text-muted">Nenhuma informação sobre a descrição da empresa no momento!</p>
+
+            <hr />
+
+            <ul class="list">
+                <li>
+                    <i class="fa fa-globe"></i>
+                    <?php echo $result->getCnpj(); ?>
+                </li>
+                <li>
+                    <i class="fa fa-check-circle"></i>
+                    <?php echo $result->getNomeFantasia(); ?>
+                </li>
+                <li>
+                    <i class="fa fa-phone"></i>
+                    <?php echo $result->getTelefone(); ?>
+                </li>
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <?php echo $result->getEmail(); ?>
+                </li>
+                <li>
+                    <i class="fa fa-map-marker"></i>
+                    <?php echo $result->getEnderecoCompleto(); ?>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="col-sm-7">
+
+            <h2 class="title-featured">
+                <i class="fa fa-building"></i>
+                <?php echo $result->getRazaoSocial(); ?>
+            </h2>
+
+            <div class="tabs">
+                <button id="tabdefault" class="tabclick tabactive" onclick="openPage('tab1', this, '#fff')">Receita Federal</button>
+                <button class="tabclick" onclick="openPage('tab2', this, '#fff')">Simples Nacional</button>
+                <button class="tabclick" onclick="openPage('tab3', this, '#fff')">Sintegra</button>
+                <button class="tabclick" onclick="openPage('tab4', this, '#fff')">Suframa</button>
+            </div>
+
+            <div id="tab1" class="tabcontent">
+
+                <h4 class="title">ATIVIDADE ECONÔMICA PRIMÁRIA</h4>
+                <table class="default">
+                    <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>DESCRIÇÃO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach( $result->getAtividadePrincipal() as $row ): ?>
+                        <tr>
+                            <td><?php echo $row->code; ?></td>
+                            <td><?php echo $row->text; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <hr />
+
+                <h4 class="title">ATIVIDADES ECONÔMICAS SECUNDÁRIAS</h4>
+                <table class="default">
+                    <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>DESCRIÇÃO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach( $result->getAtividadesSecundarias() as $row ): ?>
+                        <tr>
+                            <td><?php echo $row->code; ?></td>
+                            <td><?php echo $row->text; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <hr />
+
+                <h4 class="title">QSA</h4>
+                <table class="default">
+                    <thead>
+                    <tr>
+                        <th>NOME</th>
+                        <th>QUALIFICAÇÃO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach( $result->getQsa() as $row ): ?>
+                        <tr>
+                            <td>
+                                <?php echo $row->nome; ?>
+                                <?php echo $row->nome_rep_legal; ?>
+                                <?php echo $row->pais_origem; ?>
+                            </td>
+                            <td>
+                                <?php echo $row->qual; ?>
+                                <?php echo $row->qual_rep_legal; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <hr />
+
+                <h4 class="title">CÓDIGO E DESCRIÇÃO DA NATUREZA JURÍDICA</h4>
+                <p><?php echo $result->getSiglaNaturezaJuridica(); ?> - <?php echo $result->getNaturezaJuridica(); ?></p>
+                <hr />
+
+                <h4 class="title">CAPITAL SOCIAL</h4>
+                <p>R$ <?php echo $result->getCapitalSocial(); ?></p>
+                <hr />
+
+                <h4 class="title">PORTE</h4>
+                <p><?php echo $result->getPorte(); ?></p>
+                <hr />
+
+                <h4 class="title">MAIS INFORMAÇÕES</h4>
+                <p><b>Abertura:</b> <?php echo $result->getAbertura(); ?></p>
+                <p><b>Última atualização:</b> <?php echo $result->getUltimaAtualizacao(); ?></p>
+
+                <p><b>Situação:</b> <?php echo $result->getSituacao(); ?></p>
+                <p><b>Data da Situação:</b> <?php echo $result->getDataSituacao(); ?></p>
+                <p><b>Motivo da situação:</b> <?php echo $result->getMotivoSituacao(); ?></p>
+                <p><b>Situação especial:</b> <?php echo $result->getSituacaoEspecial(); ?></p>
+                <p><b>Data da situação especial:</b> <?php echo $result->getDataSituacaoEspecial(); ?></p>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+
+                <h4 class="title">SIMPLES NACIONAL</h4>
+                <hr />
+                <p><b>CNPJ da matriz:</b> <?php echo $result->getCnpjMatriz(); ?></p>
+                <p><b>Situação simples nacional:</b> <?php echo $result->getSituacaoSimplesNacional(); ?></p>
+                <p><b>Situação simei:</b> <?php echo $result->getSituacaoSimei(); ?></p>
+                <p><b>Situação simples nacional anterior:</b> <?php echo $result->getSituacaoSimplesNacionalAnterior(); ?></p>
+                <p><b>Situação simei anterior:</b> <?php echo $result->getSituacaoSimeiAnterior(); ?></p>
+                <p><b>Agendamentos:</b> <?php echo $result->getAgendamentos(); ?></p>
+                <p><b>Eventos futuros simples nacional:</b> <?php echo $result->getEventosFuturosSimplesNacional(); ?></p>
+                <p><b>Eventos futuros simples simei:</b> <?php echo $result->getEventosFuturosSimei(); ?></p>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+
+                <h4 class="title">SINTEGRA</h4>
+                <hr />
+
+                <p><b>Nome empresarial:</b> <?php echo $result->getNomeEmpresarial(); ?></p>
+                <p><b>Nome fantasia:</b> <?php echo $result->getNomeFantasia(); ?></p>
+                <p><b>CNPJ:</b> <?php echo $result->getCnpj(); ?></p>
+                <p><b>Inscrição estadual:</b> <?php echo $result->getInscricaoEstadual(); ?></p>
+                <p><b>Tipo inscrição:</b> <?php echo $result->getTipoInscricao(); ?></p>
+                <p><b>Data da situação cadastral:</b> <?php echo $result->getDataSituacaoCadastral(); ?></p>
+                <p><b>Situação CNPJ:</b> <?php echo $result->getSituacaoCnpj(); ?></p>
+                <p><b>Situação IE:</b> <?php echo $result->getSituacaoIe(); ?></p>
+                <p><b>Data de início das atividades:</b> <?php echo $result->getDataInicioAtividade(); ?></p>
+                <p><b>Data do fim das atividades:</b> <?php echo $result->getDataFimAtividade(); ?></p>
+                <p><b>Regime de tributação:</b> <?php echo $result->getRegimeTributacao(); ?></p>
+                <p><b>Informação IE como destinatário:</b> <?php echo $result->getInformacaoIeComoDestinatario(); ?></p>
+                <p><b>Porte empresa:</b> <?php echo $result->getPorteEmpresa(); ?></p>
+                <hr />
+
+                <h4 class="title">CNAE PRINCIPAL</h4>
+                <table class="default">
+                    <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>DESCRIÇÃO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><?php echo $result->getCnaePrincipalCode(); ?></td>
+                            <td><?php echo $result->getCnaePrincipalText(); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div id="tab4" class="tabcontent">
+                <h4 class="title">SUFRAMA</h4>
+                <hr />
+                <p>Nenhuma informação até o momento!</p>
+            </div>
+
+            <ul class="links">
+                <li><a href="javascript:;">SALVAR CONSULTA</a></li>
+                <li><a href="javascript:;">ENVIAR VIA SMS</a></li>
+                <li><a href="javascript:;">PESQUISAR VÍNCULOS</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+<!--FIM SECTION RESULTADO DA BUSCA-->
+
+<script type="text/javascript">
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tabclick");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+
+        $('.tabactive').removeClass('tabactive');
+        elmnt.classList.add('tabactive');
+    }
+    document.getElementById("tabdefault").click();
+</script>

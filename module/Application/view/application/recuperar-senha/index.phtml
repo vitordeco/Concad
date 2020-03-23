@@ -1,0 +1,55 @@
+
+
+
+
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12 blc_login">
+
+            <form method="post" class="tela_login validate">
+
+                <div class="logo_login">
+                    <a href="/"><img src="/assets/application/img/logo_concad_login.png" alt="Concad" /></a>
+                </div>
+
+                <p>Digite sua nova senha de acesso:</p>
+
+                <div class="row text-left text-muted">
+
+                    <div class="col-sm-6">
+                        Senha:<br/>
+                        <input name="senha" type="password" class="form-control-login" id="password-input" autofocus="autofocus" />
+                    </div>
+
+                    <div class="col-sm-6">
+                        Confirmar Senha:<br/>
+                        <input name="senha_confirmar" type="password" class="form-control-login" />
+                    </div>
+
+                </div>
+
+                <div class="text-left" style="padding: 10px 0 0 0;">
+                    <small><b>Força da senha:</b> Crie uma senha segura, contendo no mínimo 6 caracteres, com letras maiúsculas, minúsculas, números e caracteres especiais como @ ou #.</small>
+                    <ul id="password-force"></ul>
+                </div>
+
+                <div class="form-group row login-submit">
+                    <div class="col-12">
+                        <button data-dismiss="modal" type="submit" class="btn btn-login btn-xl">Redefinir senha</button>
+                    </div>
+                </div>
+
+                <?php echo \Tropaframework\Security\NoCSRF::generate("content"); ?>
+                <input type="hidden" name="method" value="redefinirSenhaEmail" />
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
