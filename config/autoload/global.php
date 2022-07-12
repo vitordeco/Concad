@@ -2,7 +2,7 @@
 return array(
     'db' => array(
 		'driver'	=> 'Pdo',
-		'dsn'		=> 'mysql:dbname=db_guerreiro;host=localhost',
+		'dsn'		=> 'mysql:dbname=guerreiro_db;host=localhost',
 		'username'	=> 'guerreiro',
 		'password'	=> 'Merege@7193',
 		'driver_options' => array(
