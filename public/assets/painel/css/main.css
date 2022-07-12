@@ -36,7 +36,7 @@ header .top-menu {
     float: left;
 }
 header a.logo {
-    background: url('/assets/application/img/logo_concad.png') top center no-repeat;
+    background: url('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/img/logo_concad.png') top center no-repeat;
     background-size: 65%!important;
     width: calc(100% - 55px);
     height: 100%;

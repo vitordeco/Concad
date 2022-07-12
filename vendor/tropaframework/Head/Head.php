@@ -317,8 +317,8 @@ fbq('init', '" . $id . "');";
 		$css->appendStylesheet('/assets/application/js/extensions/jquery.datepicker/jquery-ui.structure.min.css');
 	
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.datepicker/jquery-ui.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.datepicker/init.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.datepicker/jquery-ui.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.datepicker/init.js', 'text/javascript');
 	}
 	
 	public function addCarousel()
@@ -328,15 +328,15 @@ fbq('init', '" . $id . "');";
 		$css->appendStylesheet('/assets/application/js/extensions/jquery.owl.carousel/owl.transitions.css');
 		
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.owl.carousel/owl.carousel.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.owl.carousel/init.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.owl.carousel/owl.carousel.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.owl.carousel/init.js', 'text/javascript');
 	}
 	
 	public function addCountdown()
 	{
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.countdown/jquery.countdown.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.countdown/init.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.countdown/jquery.countdown.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.countdown/init.js', 'text/javascript');
 	}
 	
 	public function addFancybox()
@@ -346,8 +346,8 @@ fbq('init', '" . $id . "');";
 		$css->appendStylesheet('/assets/application/js/extensions/jquery.fancybox/fancybox.responsive.css');
 		
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.fancybox/jquery.fancybox.pack.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.fancybox/init.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.fancybox/jquery.fancybox.pack.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.fancybox/init.js', 'text/javascript');
 	}
 	
 	public function addHighcharts()
@@ -362,8 +362,8 @@ fbq('init', '" . $id . "');";
 		$css->appendStylesheet('/assets/application/js/extensions/jquery.perfect.scrollbar/css/perfect-scrollbar.min.css');
 	
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.perfect.scrollbar/js/perfect-scrollbar.jquery.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.perfect.scrollbar/js/init.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.perfect.scrollbar/js/perfect-scrollbar.jquery.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.perfect.scrollbar/js/init.js', 'text/javascript');
 	}
 	
 	public function addSelect2()
@@ -372,8 +372,8 @@ fbq('init', '" . $id . "');";
 		$css->appendStylesheet('/assets/application/js/extensions/jquery.select2/css/select2.min.css');
 	
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.select2/js/select2.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.select2/js/init.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.select2/js/select2.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.select2/js/init.js', 'text/javascript');
 	}
 	
 	public function addSlider()
@@ -382,23 +382,23 @@ fbq('init', '" . $id . "');";
 		$css->appendStylesheet('/assets/application/js/extensions/jquery.nouislider/nouislider.min.css');
 		
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.nouislider/nouislider.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.nouislider/init.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.nouislider/nouislider.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.nouislider/init.js', 'text/javascript');
 	}
 	
 	public function addValidation()
 	{
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.validation/jquery.validate.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.validation/additional-methods.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.validation/localization/messages_pt_BR.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.validation/jquery.validate.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.validation/additional-methods.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.validation/localization/messages_pt_BR.js', 'text/javascript');
 	}
 	
 	public function addMask()
 	{
 		$js = $this->getServiceLocator->get('ViewHelperManager')->get('headScript');
-		$js->appendFile('/assets/application/js/extensions/jquery.mask/jquery.maskedinput.min.js', 'text/javascript');
-		$js->appendFile('/assets/application/js/extensions/jquery.mask/jquery.maskMoney.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.mask/jquery.maskedinput.min.js', 'text/javascript');
+		$js->appendFile('https://guerreiro.geofinder.tech/CONCAD/public/assets/application/js/extensions/jquery.mask/jquery.maskMoney.min.js', 'text/javascript');
 	}
     
 	public function addCard()

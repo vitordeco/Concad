@@ -245,7 +245,7 @@ opacity: 1;
     height: 600px;
     width: 100%;
     padding: 30px 0 30px;
-    background-image: url(/assets/application/img/bg_header.jpg);
+    background-image: url(https://guerreiro.geofinder.tech/CONCAD/public/assets/application/img/bg_header.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1989,7 +1989,7 @@ form.example::after {
 .api_pesquisa{
    border: 1px solid #ddd;
    padding: 221px 10px 30px 10px;
-   background-image: url(/assets/application/img/back_apidoc.jpg);
+   background-image: url(https://guerreiro.geofinder.tech/CONCAD/public/assets/application/img/back_apidoc.jpg);
    background-repeat: no-repeat;
 }
 
@@ -2286,7 +2286,7 @@ form.example::after {
     height: 880px;
     width: 100%;
     padding: 30px 0 30px;
-    background-image: url(/assets/application/img/bg_header.jpg);
+    background-image: url(https://guerreiro.geofinder.tech/CONCAD/public/assets/application/img/bg_header.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
