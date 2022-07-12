@@ -47,7 +47,7 @@ return array(
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/CONCAD/public/[:controller[/:action][/:id][/]]',
+                            'route'    => '/[:controller[/:action][/:id][/]]',
                             'constraints' => array(
                                 'controller' => '[a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z0-9_-]*',
