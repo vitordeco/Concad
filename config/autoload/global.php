@@ -2,9 +2,9 @@
 return array(
     'db' => array(
 		'driver'	=> 'Pdo',
-		'dsn'		=> 'mysql:dbname=cong_nursing;host=cong_nursing.mysql.dbaas.com.br',
-		'username'	=> 'cong_nursing',
-		'password'	=> 'Sucesso2020',
+		'dsn'		=> 'mysql:dbname=db_guerreiro;host=localhost',
+		'username'	=> 'guerreiro',
+		'password'	=> 'Merege@7193',
 		'driver_options' => array(
 //            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
             '1002' => 'SET NAMES \'UTF8\''
